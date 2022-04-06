@@ -20,5 +20,9 @@ namespace WcfServiceClientProj1
             msg.Text = client.Calc_bmi(Convert.ToDouble(weight.Text), Convert.ToDouble(height.Text));
             msg.Visible = true;
         }
+        protected void Button3_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("HomePage.aspx");
+        }
     }
 }

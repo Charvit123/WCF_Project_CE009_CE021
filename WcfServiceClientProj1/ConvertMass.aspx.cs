@@ -20,5 +20,10 @@ namespace WcfServiceClientProj1
             msg.Text = client.ConvertMass(ddlist1.SelectedIndex, ddlist2.SelectedIndex, Convert.ToDouble(mass.Text));
             msg.Visible = true;
         }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("HomePage.aspx");
+        }
     }
 }

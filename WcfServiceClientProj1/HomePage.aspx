@@ -23,7 +23,7 @@
         }
         .menu{
             justify-content:center;
-            border-radius: 10%;
+            border-radius: 15%;
             background-color: rgba(0,0,0, 0.5); 
             color: white;
             border: 3px solid #f1f1f1;
@@ -33,7 +33,7 @@
             transform: translate(-50%, -50%);
             z-index: 2;
             width: 40%;
-            height: 50%;
+            height: 55%;
             margin-top:2rem;
             padding: 1rem;
             text-align: center;
@@ -54,7 +54,6 @@
     </style>
 </head>
 <body>
-    <image ></image>
     <form id="form1" runat="server">
         <div class="header">
             <asp:Label ID="Label1" runat="server" Text="Unit Converter" Font-Bold="True"></asp:Label>
@@ -73,7 +72,8 @@
             <ol style="list-style:none;padding:0rem;">
             <li><a href="./calcbmi.aspx">calculate bmi</a></li>
             <li><a href="./convertlength.aspx">length converter</a></li>
-            <li><a href="./convertmass.aspx">temperature converter</a></li>
+            <li><a href="./convertmass.aspx">mass converter</a></li>
+            <li><a href="./converttemp.aspx">temperature converter</a></li>
             <li><a href="./convertenergy.aspx">energy converter</a></li>
             <li><a href="./calcinterest.aspx">calculate interest</a></li>
             </ol>

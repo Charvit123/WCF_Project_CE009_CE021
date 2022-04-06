@@ -20,5 +20,9 @@ namespace WcfServiceClientProj1
             msg.Text = client.ConvertTemperature(ddlist1.SelectedIndex, ddlist2.SelectedIndex , Convert.ToDouble(temp.Text));
             msg.Visible = true;
         }
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("HomePage.aspx");
+        }
     }
 }

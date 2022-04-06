@@ -6,7 +6,14 @@
 <head runat="server">
     <title></title>
     <style>
-
+        .header{
+            font-family:tahoma;
+	        margin:1rem;
+	        padding:1rem;
+            color:white;
+            text-align:center;
+            font-size:2.5rem;
+        }
          body{
             background-repeat: no-repeat;
             height: 500px; /* You must set a specified height */
@@ -26,17 +33,74 @@
             left: 50%;
             transform: translate(-50%, -50%);
             z-index: 2;
-            width: 40%;
-            height: 30%;
-            margin-top: 2rem;
+            width: 50%;
+            height: 55%;
+            margin-top: 2.5rem;
             padding: 1rem;
             text-align: center;
             font-size: 1.5rem;
         }
-            .btn{
-                padding:1rem;
-                color:black;
-                border-radius:20px;
+        .btn{
+            background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6));
+            border-color:azure;
+                border-width:0.1em;
+                border-radius:9%;
+                color: white;
+                padding: 11px 20px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 18px;
+                cursor: pointer;
+                margin-top:2.5em;
+        }
+        .btn:hover {
+            opacity: 0.8;
+        }
+        .btn2{
+            background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6));
+            border-color:azure;
+                border-width:0.1em;
+                border-radius:9%;
+                color: white;
+                padding: 7px 10px;
+                text-align: center;
+                text-decoration: none;
+                font-size: 15px;
+                cursor: pointer;
+                margin-left:1em;
+        }
+        .btn2:hover {
+            opacity: 0.8;
+        }
+        .menupart{
+            font-size: 20px;
+            text-align: center;
+            padding:1.3em;
+        }
+        .Textbx{
+            font-size:0.7em;
+            padding:0.4em;
+
+        }
+        .Textbx:hover{
+            border-color:azure;
+        }
+        .msg{
+            margin:1em;
+        }
+        .ddlist{
+            width:25%;
+            font-size:0.7em;
+            padding:0.4em;
+            margin:2em;
+        }
+        .ddlist:hover{
+            border-color:azure;
+            opacity:0.7;
+        }
+        .insidedd{
+            margin-left:1em;
         }
         
     </style>
@@ -44,48 +108,35 @@
 <body>
     <image></image>
     <form id="form1" runat="server">
-       <center>
         <div>
-        &nbsp;<asp:LinkButton ID="LinkButton1" runat="server" BackColor="White" BorderWidth="1px" PostBackUrl="~/HomePage.aspx">Home</asp:LinkButton>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <center>
-        <asp:Label ID="Label1" runat="server" Text="Temperature Converter" Font-Bold="True" Font-Size="XX-Large" ForeColor="#CC99FF" ></asp:Label>
-            <br />
-            <hr />
-            <br />
-           
-            <br />
-            <div class="menu">
-            From&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:DropDownList ID="ddlist1" runat="server">
-                <asp:ListItem Value="0">Celsius</asp:ListItem>
-                <asp:ListItem Value="1">Fahrenheit</asp:ListItem>
-                <asp:ListItem Value="2">Kelvin</asp:ListItem>
-            </asp:DropDownList>
-&nbs;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; to&nbsp;&nbsp;&nbp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:DropDownList ID="ddlist2" runat="server">
-                <asp:ListItem Value="0">Celsius</asp:ListItem>
-                <asp:ListItem Value="1">Fahrenheit</asp:ListItem>
-                <asp:ListItem Value="2">Kelvin</asp:ListItem>
-            </asp:DropDownList>
-            <br />
-            <br />
-            <br />
-            <asp:Label ID="Label2" runat="server" Text="Enter Temperature"></asp:Label>
-&nbsp;&nbsp;&nbsp;
-            <asp:TextBox ID="temp" runat="server"></asp:TextBox>
-&nbsp;&nbsp;&nbsp;
-            <br />
-            <br />
-            <br />
-            <asp:Button ID="Button1" runat="server" Text="Convert"  class="btn" OnClick="Button1_Click" />
-            <br />
-            <br />
-            <asp:Label ID="msg" runat="server" Text="Label" Visible="False"></asp:Label>
-            <br />
-                </div>
+            <asp:Button ID="Button2" runat="server" Text="Home" class="btn2" OnClick="Button2_Click" />
         </div>
-            </center>
+         <div class="header">
+            <asp:Label ID="Label1" runat="server" Text="Temperature Converter" Font-Bold="True"></asp:Label>
+        </div>
+            <div class="menu">
+                <div class="insidedd">
+            From
+            <asp:DropDownList ID="ddlist1" runat="server" CssClass="ddlist">
+                <asp:ListItem Value="0">Celsius</asp:ListItem>
+                <asp:ListItem Value="1">Fahrenheit</asp:ListItem>
+                <asp:ListItem Value="2">Kelvin</asp:ListItem>
+            </asp:DropDownList>to
+            <asp:DropDownList ID="ddlist2" runat="server" CssClass="ddlist">
+                <asp:ListItem Value="0">Celsius</asp:ListItem>
+                <asp:ListItem Value="1">Fahrenheit</asp:ListItem>
+                <asp:ListItem Value="2">Kelvin</asp:ListItem>
+            </asp:DropDownList>
+            <div class="menupart">
+                <asp:Label ID="Label2" runat="server" Text="Enter Temperature" Style="font-size:1.5rem;padding:2rem;"></asp:Label>
+                <asp:TextBox ID="temp" runat="server" CssClass="Textbx"></asp:TextBox>
+             </div>
+                <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Convert" class="btn"/>
+           <div class="msg">
+        <asp:Label ID="msg" runat="server" Text="Label" Visible="False"></asp:Label>
+               </div>
+        </div>
+          </div>
     </form>
 </body>
 </html>
